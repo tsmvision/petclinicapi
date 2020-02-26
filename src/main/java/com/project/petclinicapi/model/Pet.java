@@ -5,6 +5,8 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -23,5 +25,9 @@ public class Pet extends NamedEntity {
     @ManyToOne
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private Owner owner;
+
+    @OneToMany(mappedBy = "pet")
+    @JoinColumn(name = "visit_id")
+    private Set<Visit> visits = new HashSet<>();
 
 }
