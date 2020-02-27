@@ -8,6 +8,6 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "type")
+@Table(name = "types")
 public class PetType extends NamedEntity {
 }

@@ -2,10 +2,9 @@ package com.project.petclinicapi.model;
 
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,5 +18,15 @@ public class Vet extends Person {
             joinColumns = @JoinColumn(name = "vet_id"),
             inverseJoinColumns = @JoinColumn(name = "specialty_id")
     )
-    private Set<Specialty> specialties = new HashSet<>();
+    private List<Specialty> specialties = new ArrayList<>();
+
+    public void addSpecialty(Specialty specialty) {
+        for (Specialty spc: specialties) {
+            if (spc.getId().equals(specialty.getId())) {
+                return;
+            }
+        }
+        specialties.add(specialty);
+    }
+
 }

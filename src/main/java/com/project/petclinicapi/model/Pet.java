@@ -26,8 +26,11 @@ public class Pet extends NamedEntity {
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private Owner owner;
 
-    @OneToMany(mappedBy = "pet")
-    @JoinColumn(name = "visit_id")
+    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
     private Set<Visit> visits = new HashSet<>();
+
+    public void addVisit(Visit visit) {
+        visits.add(visit);
+    }
 
 }
