@@ -14,11 +14,11 @@ class PetTypeRepositoryTest {
     @Autowired
     PetTypeRepository petTypeRepository;
 
-    @Test
-    @Transactional
-    public void create() {
-        PetType petType = new PetType();
-        petType.setName("pet type01");
-        petTypeRepository.save(petType);
-    }
+//    @Test
+//    @Transactional
+//    public void create() {
+//        PetType petType = new PetType();
+//        petType.setName("pet type01");
+//        petTypeRepository.save(petType);
+//    }
 }

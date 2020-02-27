@@ -12,15 +12,15 @@ class OwnerRepositoryTest {
     @Autowired
     OwnerRepository ownerRepositories;
 
-    @Test
-    @Transactional
-    public void create() {
-        Owner owner = new Owner();
-        owner.setFirstName("Luke");
-        owner.setLastName("Lee");
-        owner.setAddress("1234 st");
-        owner.setCity("freedom");
-        owner.setTelephone("1234567890");
-        ownerRepositories.save(owner);
-    }
+//    @Test
+//    @Transactional
+//    public void create() {
+//        Owner owner = new Owner();
+//        owner.setFirstName("Luke");
+//        owner.setLastName("Lee");
+//        owner.setAddress("1234 st");
+//        owner.setCity("freedom");
+//        owner.setTelephone("1234567890");
+//        ownerRepositories.save(owner);
+//    }
 }
