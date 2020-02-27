@@ -2,10 +2,7 @@ package com.project.petclinicapi.controllers;
 
 import com.project.petclinicapi.model.Owner;
 import com.project.petclinicapi.services.OwnerService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/owners")
@@ -17,7 +14,7 @@ public class OwnerController {
         this.ownerService = ownerService;
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/test")
     public Owner sayHello() {
         Owner owner = new Owner();
         owner.setId(1);
@@ -29,5 +26,12 @@ public class OwnerController {
     @GetMapping("/{id}")
     public Owner findById(@PathVariable Integer id) {
             return ownerService.findById(id);
+    }
+
+    @PostMapping("/")
+    public Owner addOwner(@RequestBody Owner owner) {
+        // TODO: validate values using initbind ??
+        ownerService.save(owner);
+        return owner;
     }
 }
