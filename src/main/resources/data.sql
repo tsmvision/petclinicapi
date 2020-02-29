@@ -82,3 +82,14 @@ INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (7
 INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (8, 'id', '2011-08-28', 9, 9);
 INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (9, 'odio', '2005-04-17', 7, 4);
 INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (10, 'qui', '1980-08-28', 6, 5);
+
+INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (1, 3, '1974-03-13', 'Maiores quia quae delectus est velit ipsam. Natus veritatis commodi sit quis laudantium et ut. Ex dolores et eos quibusdam dolor soluta.');
+INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (2, 5, '1991-05-10', 'Vel non recusandae et itaque mollitia velit. Laudantium omnis dolorum aut. Unde reiciendis nesciunt ullam. Est ullam est ex recusandae atque.');
+INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (3, 9, '1980-10-28', 'Reprehenderit et voluptatem quod. Earum sed animi ipsam neque. Ut sit laborum ut nihil.');
+INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (4, 9, '2010-01-24', 'Voluptas sed velit autem soluta qui facilis. Est dolorum blanditiis occaecati reiciendis ab. Dolor natus facilis et nostrum. Voluptatibus magni labore et consequatur repellat.');
+INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (5, 2, '2017-11-23', 'Deleniti ut iusto ut doloribus. Et possimus est eum est. Sapiente incidunt sit aut ut aperiam autem aut. Enim non non beatae suscipit sunt minus.');
+INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (6, 9, '1972-01-30', 'Iure dolores sunt est reiciendis illo sapiente eaque. Aliquam eos corrupti voluptas aut quae necessitatibus dignissimos. Sequi qui ratione dolor.');
+INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (7, 3, '1980-05-07', 'Voluptatum omnis possimus at quis modi aut porro. Aut omnis ad hic amet nam debitis. Laboriosam voluptas totam nihil accusamus beatae.');
+INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (8, 3, '2018-11-02', 'Alias quas culpa nostrum voluptatem nihil. Et voluptas necessitatibus aspernatur rem suscipit.');
+INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (9, 1, '1995-08-17', 'Consequatur ut est quaerat et porro. Et recusandae numquam porro maxime. A id asperiores ad autem aliquam et. Quia corporis cumque omnis adipisci sit suscipit quasi. Repellat laborum itaque ut.');
+INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (10, 8, '1972-11-26', 'Et harum autem doloremque pariatur ipsum saepe omnis. Quisquam reprehenderit asperiores ea odio nihil. Eum doloremque est iure ipsam est.');
