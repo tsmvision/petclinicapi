@@ -93,3 +93,14 @@ INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (7, 3,
 INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (8, 3, '2018-11-02', 'Alias quas culpa nostrum voluptatem nihil. Et voluptas necessitatibus aspernatur rem suscipit.');
 INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (9, 1, '1995-08-17', 'Consequatur ut est quaerat et porro. Et recusandae numquam porro maxime. A id asperiores ad autem aliquam et. Quia corporis cumque omnis adipisci sit suscipit quasi. Repellat laborum itaque ut.');
 INSERT INTO `visits` (`id`, `pet_id`, `visit_date`, `description`) VALUES (10, 8, '1972-11-26', 'Et harum autem doloremque pariatur ipsum saepe omnis. Quisquam reprehenderit asperiores ea odio nihil. Eum doloremque est iure ipsam est.');
+
+INSERT INTO `vet_specialties` (`vet_id`, `specialty_id`) VALUES (1, 10);
+INSERT INTO `vet_specialties` (`vet_id`, `specialty_id`) VALUES (2, 8);
+INSERT INTO `vet_specialties` (`vet_id`, `specialty_id`) VALUES (2, 9);
+INSERT INTO `vet_specialties` (`vet_id`, `specialty_id`) VALUES (4, 2);
+INSERT INTO `vet_specialties` (`vet_id`, `specialty_id`) VALUES (5, 3);
+INSERT INTO `vet_specialties` (`vet_id`, `specialty_id`) VALUES (6, 3);
+INSERT INTO `vet_specialties` (`vet_id`, `specialty_id`) VALUES (7, 1);
+INSERT INTO `vet_specialties` (`vet_id`, `specialty_id`) VALUES (8, 3);
+INSERT INTO `vet_specialties` (`vet_id`, `specialty_id`) VALUES (9, 4);
+INSERT INTO `vet_specialties` (`vet_id`, `specialty_id`) VALUES (9, 5);

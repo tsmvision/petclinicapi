@@ -1,11 +1,13 @@
 package com.project.petclinicapi.controllers;
 
+import com.project.petclinicapi.controllerResultJson.SpecialtyJson;
 import com.project.petclinicapi.model.Specialty;
 import com.project.petclinicapi.services.SpecialtyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Slf4j
 @RestController
@@ -19,14 +21,14 @@ public class SpecialtyController {
     }
 
     @GetMapping({"", "/"})
-    public List<Specialty> findAll() {
-        return specialtyService.findAll();
+    public Set<SpecialtyJson> findAll() {
+        return specialtyService.findAllWithVetIds();
     }
 
     @GetMapping("/{id}")
-    public Specialty findById(@PathVariable Integer id) {
+    public SpecialtyJson findById(@PathVariable Integer id) {
         log.info("id: {}", id);
-        return specialtyService.findById(id);
+        return specialtyService.findByIdWithVetIds(id);
     }
 
     @PostMapping({"", "/"})
