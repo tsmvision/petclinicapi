@@ -1,8 +1,5 @@
 package com.project.petclinicapi.controllerResultJson;
 
-import com.project.petclinicapi.model.Owner;
-import com.project.petclinicapi.model.PetType;
-import com.project.petclinicapi.model.Visit;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDate;
