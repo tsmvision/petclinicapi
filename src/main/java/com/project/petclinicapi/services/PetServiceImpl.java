@@ -1,12 +1,11 @@
 package com.project.petclinicapi.services;
 
+import com.project.petclinicapi.controllerResultJson.PetJson;
 import com.project.petclinicapi.model.Pet;
+import com.project.petclinicapi.model.Visit;
 import com.project.petclinicapi.repositories.PetRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class PetServiceImpl implements PetService {
@@ -31,6 +30,38 @@ public class PetServiceImpl implements PetService {
             result.add(pet);
         }
         return result;
+    }
+
+    @Override
+    public Set<PetJson> findAllWithIds() {
+        Iterable<Pet> pets = petRepository.findAll();
+        Set<PetJson> result = new HashSet<>();
+
+        for (Pet pet: pets) {
+            result.add(convertPetIntoPetJson(pet));
+        }
+
+        return result;
+    }
+
+    @Override
+    public PetJson convertPetIntoPetJson(Pet pet) {
+        PetJson petJson = new PetJson();
+        if (pet != null) {
+            petJson.setId(pet.getId());
+            petJson.setName(pet.getName());
+            petJson.setBirthDate(pet.getBirthDate());
+            petJson.setOwnerId(pet.getOwner().getId());
+            petJson.setTypeId(pet.getType().getId());
+
+            Set<Visit> visits = pet.getVisits();
+            if (visits.size() > 0) {
+                for (Visit visit: visits) {
+                    petJson.addVisit(visit.getId());
+                }
+            }
+        }
+        return petJson;
     }
 
     @Override

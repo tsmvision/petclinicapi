@@ -1,10 +1,11 @@
 package com.project.petclinicapi.controllers;
 
+import com.project.petclinicapi.controllerResultJson.PetJson;
 import com.project.petclinicapi.model.Pet;
 import com.project.petclinicapi.services.PetService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/pets")
@@ -17,8 +18,8 @@ public class PetController {
     }
 
     @GetMapping({"", "/"})
-    public List<Pet> findAll() {
-        return petService.findAll();
+    public Set<PetJson> findAll() {
+        return petService.findAllWithIds();
     }
 
     @GetMapping("/{id}")

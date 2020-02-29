@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BaseEntityJson {
+public class BaseJson {
 
     private Integer id;
 

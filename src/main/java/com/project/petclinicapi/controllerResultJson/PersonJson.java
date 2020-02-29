@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PersonJson extends BaseEntityJson {
+public class PersonJson extends BaseJson {
 
     private String firstName;
     private String lastName;
