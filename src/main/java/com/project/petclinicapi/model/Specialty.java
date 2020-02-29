@@ -3,7 +3,6 @@ package com.project.petclinicapi.model;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -15,7 +14,7 @@ public class Specialty extends BaseEntity {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "specialties")
     private Set<Vet> vets;
 
 }

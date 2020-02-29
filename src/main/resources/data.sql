@@ -60,3 +60,14 @@ INSERT INTO `types` (`id`, `name`) VALUES (9, 'numquam');
 INSERT INTO `types` (`id`, `name`) VALUES (10, 'quo');
 INSERT INTO `types` (`id`, `name`) VALUES (1, 'ullam');
 INSERT INTO `types` (`id`, `name`) VALUES (5, 'voluptas');
+
+INSERT INTO `specialties` (`id`, `name`) VALUES (3, 'ad');
+INSERT INTO `specialties` (`id`, `name`) VALUES (9, 'est');
+INSERT INTO `specialties` (`id`, `name`) VALUES (2, 'nihil');
+INSERT INTO `specialties` (`id`, `name`) VALUES (10, 'perferendis');
+INSERT INTO `specialties` (`id`, `name`) VALUES (5, 'quod');
+INSERT INTO `specialties` (`id`, `name`) VALUES (1, 'sit');
+INSERT INTO `specialties` (`id`, `name`) VALUES (7, 'totam');
+INSERT INTO `specialties` (`id`, `name`) VALUES (8, 'ut');
+INSERT INTO `specialties` (`id`, `name`) VALUES (6, 'vel');
+INSERT INTO `specialties` (`id`, `name`) VALUES (4, 'velit');
