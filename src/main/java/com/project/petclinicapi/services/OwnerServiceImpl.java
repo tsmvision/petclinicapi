@@ -6,6 +6,7 @@ import com.project.petclinicapi.model.Pet;
 import com.project.petclinicapi.repositories.OwnerRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
 import java.util.*;
 
 @Slf4j
@@ -23,7 +24,7 @@ public class OwnerServiceImpl implements OwnerService {
         Iterable<Owner> owners = ownerRepository.findAll();
         List<Owner> result = new ArrayList<>();
 
-        for (Owner owner: owners) {
+        for (Owner owner : owners) {
             result.add(owner);
         }
         return result;
@@ -34,7 +35,7 @@ public class OwnerServiceImpl implements OwnerService {
         Iterable<Owner> owners = ownerRepository.findAll();
         Set<OwnerJson> result = new HashSet<>();
 
-        for (Owner owner: owners) {
+        for (Owner owner : owners) {
             result.add(convertOwnerIntoOwnerJson(owner));
         }
 
@@ -49,12 +50,8 @@ public class OwnerServiceImpl implements OwnerService {
 
     @Override
     public OwnerJson findByIdWithPetId(Integer id) {
-        OwnerJson ownerJson = new OwnerJson();
-        Owner owner = ownerRepository.findByIdNoPets(id);
-        if (ownerRepository.findByIdNoPets(id) != null) {
-            ownerJson = convertOwnerIntoOwnerJson(owner);
-        }
-        return ownerJson;
+        Owner owner = findById(id);
+        return convertOwnerIntoOwnerJson(owner);
     }
 
     @Override
@@ -74,7 +71,7 @@ public class OwnerServiceImpl implements OwnerService {
                 }
             }
         }
-            return ownerJson;
+        return ownerJson;
     }
 
     @Override

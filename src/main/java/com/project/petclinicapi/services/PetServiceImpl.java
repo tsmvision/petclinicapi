@@ -23,6 +23,12 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
+    public PetJson findByIdWithVisitIds(Integer id) {
+        Pet pet = findById(id);
+        return convertPetIntoPetJson(pet);
+    }
+
+    @Override
     public List<Pet> findAll() {
         Iterable<Pet> pets = petRepository.findAll();
         List<Pet> result = new ArrayList<>();

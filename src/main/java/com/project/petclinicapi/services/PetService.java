@@ -7,6 +7,7 @@ import java.util.Set;
 
 public interface PetService {
     Pet findById(Integer id);
+    PetJson findByIdWithVisitIds(Integer id);
     List<Pet> findAll();
     Set<PetJson> findAllWithIds();
     void save(Pet pet);

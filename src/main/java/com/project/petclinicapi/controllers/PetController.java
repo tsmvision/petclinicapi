@@ -23,8 +23,8 @@ public class PetController {
     }
 
     @GetMapping("/{id}")
-    public Pet findById(@PathVariable Integer id) {
-        return petService.findById(id);
+    public PetJson findById(@PathVariable Integer id) {
+        return petService.findByIdWithVisitIds(id);
     }
 
     @PostMapping({"", "/"})
