@@ -5,6 +5,8 @@ import com.project.petclinicapi.services.OwnerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequestMapping("/owners")
@@ -16,15 +18,9 @@ public class OwnerController {
         this.ownerService = ownerService;
     }
 
-    @GetMapping("/test")
-    public Owner sayHello() {
-        Owner owner = new Owner();
-        owner.setId(1);
-        owner.setFirstName("Luke");
-        owner.setLastName("Lee");
-
-        log.info("owner: {}", owner);
-        return owner;
+    @GetMapping({"", "/"})
+    public List<Owner> findAll() {
+        return ownerService.findAll();
     }
 
     @GetMapping("/{id}")

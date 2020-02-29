@@ -21,7 +21,7 @@ public class VetController {
         this.vetService = vetService;
     }
 
-    @GetMapping("/")
+    @GetMapping({"", "/"})
     public List<Vet> findAll() {
         return vetService.findAll();
     }

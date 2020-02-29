@@ -3,6 +3,9 @@ package com.project.petclinicapi.services;
 import com.project.petclinicapi.model.Owner;
 import com.project.petclinicapi.repositories.OwnerRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -12,6 +15,17 @@ public class OwnerServiceImpl implements OwnerService {
 
     public OwnerServiceImpl(OwnerRepository ownerRepository) {
         this.ownerRepository = ownerRepository;
+    }
+
+    @Override
+    public List<Owner> findAll() {
+        Iterable<Owner> owners = ownerRepository.findAll();
+        List<Owner> result = new ArrayList<>();
+
+        for (Owner owner: owners) {
+            result.add(owner);
+        }
+        return result;
     }
 
     @Override
