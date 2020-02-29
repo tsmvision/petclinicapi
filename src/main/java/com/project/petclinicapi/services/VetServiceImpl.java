@@ -1,6 +1,7 @@
 package com.project.petclinicapi.services;
 
 import com.project.petclinicapi.controllerResultJson.VetJson;
+import com.project.petclinicapi.controllerResultJson.VetJsonSpecialty;
 import com.project.petclinicapi.model.Specialty;
 import com.project.petclinicapi.model.Vet;
 import com.project.petclinicapi.repositories.VetRepository;
@@ -63,7 +64,10 @@ public class VetServiceImpl implements VetService {
             Set<Specialty> specialties  = vet.getSpecialties();
             if (specialties.size() > 0) {
                 for (Specialty specialty : specialties) {
-                    vetJson.addSpecialtyId(specialty.getId());
+                    VetJsonSpecialty vetJsonSpecialty = new VetJsonSpecialty();
+                    vetJsonSpecialty.setId(specialty.getId());
+                    vetJsonSpecialty.setName(specialty.getName());
+                    vetJson.addSpecialtyId(vetJsonSpecialty);
                 }
             }
         }
