@@ -1,6 +1,6 @@
 package com.project.petclinicapi.controllers;
 
-import com.project.petclinicapi.jsonformat.OwnerJson;
+import com.project.petclinicapi.controllerResultJson.OwnerJson;
 import com.project.petclinicapi.model.Owner;
 import com.project.petclinicapi.services.OwnerService;
 import lombok.extern.slf4j.Slf4j;

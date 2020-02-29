@@ -1,6 +1,6 @@
 package com.project.petclinicapi.services;
 
-import com.project.petclinicapi.jsonformat.OwnerJson;
+import com.project.petclinicapi.controllerResultJson.OwnerJson;
 import com.project.petclinicapi.model.Owner;
 
 import java.util.List;

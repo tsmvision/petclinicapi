@@ -1,4 +1,4 @@
-package com.project.petclinicapi.jsonformat;
+package com.project.petclinicapi.controllerResultJson;
 
 import lombok.Getter;
 import lombok.Setter;
