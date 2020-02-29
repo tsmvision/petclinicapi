@@ -16,9 +16,9 @@ public class PetJson extends NamedJson {
     private LocalDate birthDate;
     private Integer typeId;
     private Integer ownerId;
-    private Set<Integer> visits = new HashSet<>();
-    public void addVisit(Integer id) {
-        visits.add(id);
+    private Set<PetJsonVisit> visits = new HashSet<>();
+    public void addVisit(PetJsonVisit petJsonVisit) {
+        visits.add(petJsonVisit);
     }
 
 }

@@ -1,6 +1,7 @@
 package com.project.petclinicapi.services;
 
 import com.project.petclinicapi.controllerResultJson.PetJson;
+import com.project.petclinicapi.controllerResultJson.PetJsonVisit;
 import com.project.petclinicapi.model.Pet;
 import com.project.petclinicapi.model.Visit;
 import com.project.petclinicapi.repositories.PetRepository;
@@ -63,11 +64,22 @@ public class PetServiceImpl implements PetService {
             Set<Visit> visits = pet.getVisits();
             if (visits.size() > 0) {
                 for (Visit visit: visits) {
-                    petJson.addVisit(visit.getId());
+                    petJson.addVisit(convertVisitToPetJsonVisit(visit));
                 }
             }
         }
         return petJson;
+    }
+
+    @Override
+    public PetJsonVisit convertVisitToPetJsonVisit(Visit visit) {
+        PetJsonVisit petJsonVisit = new PetJsonVisit();
+        if (visit != null) {
+            petJsonVisit.setId(visit.getId());
+            petJsonVisit.setVisitDate(visit.getVisitDate());
+            petJsonVisit.setDescription(visit.getDescription());
+        }
+        return petJsonVisit;
     }
 
     @Override
