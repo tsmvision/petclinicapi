@@ -10,9 +10,9 @@ import java.util.Set;
 @Setter
 public class SpecialtyJson extends BaseJson {
     private String name;
-    private Set<Integer> vets = new HashSet<>();
+    private Set<SpecialtyJsonVet> vets = new HashSet<>();
 
-    public void addVet(Integer id) {
-        vets.add(id);
+    public void addVet(SpecialtyJsonVet specialtyJsonVet) {
+        vets.add(specialtyJsonVet);
     }
 }
