@@ -29,7 +29,7 @@ public class OwnerController {
         return ownerService.findById(id);
     }
 
-    @PostMapping("/")
+    @PostMapping({"", "/"})
     public Owner addOwner(@RequestBody Owner owner) {
         // TODO: validate values using initbind ??
         log.info("owner: {}", owner);

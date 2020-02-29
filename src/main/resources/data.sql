@@ -49,3 +49,14 @@ VALUES ('9', 'Oleta', 'Mayert', '4588 Oscar Mall\nBrookeview, WY 16310-2895', 'R
 INSERT INTO `owners`
 VALUES ('10', 'Jamison', 'Roob', '355 Legros Bypass Apt. 941\nJacklynmouth, IA 09960-2115', 'Walkerside',
         '005-638-7006x24985');
+
+INSERT INTO `types` (`id`, `name`) VALUES (6, 'corporis');
+INSERT INTO `types` (`id`, `name`) VALUES (7, 'doloremque');
+INSERT INTO `types` (`id`, `name`) VALUES (8, 'enim');
+INSERT INTO `types` (`id`, `name`) VALUES (4, 'id');
+INSERT INTO `types` (`id`, `name`) VALUES (2, 'itaque');
+INSERT INTO `types` (`id`, `name`) VALUES (3, 'nihil');
+INSERT INTO `types` (`id`, `name`) VALUES (9, 'numquam');
+INSERT INTO `types` (`id`, `name`) VALUES (10, 'quo');
+INSERT INTO `types` (`id`, `name`) VALUES (1, 'ullam');
+INSERT INTO `types` (`id`, `name`) VALUES (5, 'voluptas');
