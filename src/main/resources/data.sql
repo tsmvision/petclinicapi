@@ -71,3 +71,14 @@ INSERT INTO `specialties` (`id`, `name`) VALUES (7, 'totam');
 INSERT INTO `specialties` (`id`, `name`) VALUES (8, 'ut');
 INSERT INTO `specialties` (`id`, `name`) VALUES (6, 'vel');
 INSERT INTO `specialties` (`id`, `name`) VALUES (4, 'velit');
+
+INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (1, 'accusamus', '2008-02-19', 1, 1);
+INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (2, 'voluptas', '2008-12-31', 1, 2);
+INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (3, 'dolores', '1994-02-02', 2, 3);
+INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (4, 'consequatur', '1998-09-03', 4, 3);
+INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (5, 'unde', '1993-01-28', 5, 4);
+INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (6, 'illum', '2000-08-11', 6, 7);
+INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (7, 'et', '2015-01-02', 8, 10);
+INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (8, 'id', '2011-08-28', 9, 9);
+INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (9, 'odio', '2005-04-17', 7, 4);
+INSERT INTO `pets` (`id`, `name`, `birth_date`, `type_id`, `owner_id`) VALUES (10, 'qui', '1980-08-28', 6, 5);
