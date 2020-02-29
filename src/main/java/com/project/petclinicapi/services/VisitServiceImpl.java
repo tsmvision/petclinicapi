@@ -3,7 +3,6 @@ package com.project.petclinicapi.services;
 import com.project.petclinicapi.model.Visit;
 import com.project.petclinicapi.repositories.VisitRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

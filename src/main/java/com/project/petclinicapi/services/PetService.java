@@ -1,8 +1,7 @@
 package com.project.petclinicapi.services;
 
-import com.project.petclinicapi.model.Owner;
-import com.project.petclinicapi.model.Pet;
 
+import com.project.petclinicapi.model.Pet;
 import java.util.List;
 
 public interface PetService {

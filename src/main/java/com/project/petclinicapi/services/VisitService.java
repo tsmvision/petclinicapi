@@ -1,8 +1,6 @@
 package com.project.petclinicapi.services;
 
-import com.project.petclinicapi.model.Vet;
 import com.project.petclinicapi.model.Visit;
-
 import java.util.List;
 
 public interface VisitService {

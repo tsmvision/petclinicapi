@@ -1,7 +1,6 @@
 package com.project.petclinicapi.services;
 
 import com.project.petclinicapi.model.PetType;
-import com.project.petclinicapi.model.Vet;
 import com.project.petclinicapi.repositories.PetTypeRepository;
 import org.springframework.stereotype.Service;
 
