@@ -8,7 +8,6 @@ import lombok.Setter;
 public class NamedJson extends BaseJson {
 
     private String name;
-
     public String toString() {
         return this.getName();
     }

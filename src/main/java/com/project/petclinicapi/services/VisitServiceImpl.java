@@ -1,8 +1,6 @@
 package com.project.petclinicapi.services;
 
-import com.project.petclinicapi.controllerResultJson.VetJson;
 import com.project.petclinicapi.controllerResultJson.VisitJson;
-import com.project.petclinicapi.model.Specialty;
 import com.project.petclinicapi.model.Visit;
 import com.project.petclinicapi.repositories.VisitRepository;
 import org.springframework.stereotype.Service;
