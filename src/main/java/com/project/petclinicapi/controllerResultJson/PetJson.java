@@ -14,8 +14,8 @@ import java.util.Set;
 public class PetJson extends NamedJson {
 
     private LocalDate birthDate;
-    private Integer typeId;
-    private Integer ownerId;
+    private PetJsonPetType type;
+    private PetJsonOwner owner;
     private Set<PetJsonVisit> visits = new HashSet<>();
     public void addVisit(PetJsonVisit petJsonVisit) {
         visits.add(petJsonVisit);

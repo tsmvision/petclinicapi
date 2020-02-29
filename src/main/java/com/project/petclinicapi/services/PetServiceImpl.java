@@ -1,8 +1,12 @@
 package com.project.petclinicapi.services;
 
 import com.project.petclinicapi.controllerResultJson.PetJson;
+import com.project.petclinicapi.controllerResultJson.PetJsonOwner;
+import com.project.petclinicapi.controllerResultJson.PetJsonPetType;
 import com.project.petclinicapi.controllerResultJson.PetJsonVisit;
+import com.project.petclinicapi.model.Owner;
 import com.project.petclinicapi.model.Pet;
+import com.project.petclinicapi.model.PetType;
 import com.project.petclinicapi.model.Visit;
 import com.project.petclinicapi.repositories.PetRepository;
 import org.springframework.stereotype.Service;
@@ -58,8 +62,9 @@ public class PetServiceImpl implements PetService {
             petJson.setId(pet.getId());
             petJson.setName(pet.getName());
             petJson.setBirthDate(pet.getBirthDate());
-            petJson.setOwnerId(pet.getOwner().getId());
-            petJson.setTypeId(pet.getType().getId());
+
+            petJson.setOwner(convertOwnerToPetJsonOwner(pet.getOwner()));
+            petJson.setType(convertPetTypeToPetJsonPetType(pet.getType()));
 
             Set<Visit> visits = pet.getVisits();
             if (visits.size() > 0) {
@@ -69,6 +74,27 @@ public class PetServiceImpl implements PetService {
             }
         }
         return petJson;
+    }
+
+    @Override
+    public PetJsonOwner convertOwnerToPetJsonOwner(Owner owner) {
+        PetJsonOwner petJsonOwner = new PetJsonOwner();
+        if (owner != null) {
+            petJsonOwner.setId(owner.getId());
+            petJsonOwner.setFirstName(owner.getFirstName());
+            petJsonOwner.setLastName(owner.getLastName());
+        }
+        return petJsonOwner;
+    }
+
+    @Override
+    public PetJsonPetType convertPetTypeToPetJsonPetType(PetType petType) {
+        PetJsonPetType petJsonPetType = new PetJsonPetType();
+        if (petType != null) {
+            petJsonPetType.setId(petType.getId());
+            petJsonPetType.setName(petType.getName());
+        }
+        return petJsonPetType;
     }
 
     @Override
