@@ -1,11 +1,13 @@
 package com.project.petclinicapi.controllers;
 
+import com.project.petclinicapi.controllerResultJson.VetJson;
 import com.project.petclinicapi.model.Vet;
 import com.project.petclinicapi.services.VetService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Slf4j
 @RestController
@@ -19,14 +21,14 @@ public class VetController {
     }
 
     @GetMapping({"", "/"})
-    public List<Vet> findAll() {
-        return vetService.findAll();
+    public Set<VetJson> findAll() {
+        return vetService.findAllWithSpecialtyIds();
     }
 
     @GetMapping("/{id}")
-    public Vet findById(@PathVariable Integer id) {
+    public VetJson findById(@PathVariable Integer id) {
         log.info("id: {}", id);
-        return vetService.findById(id);
+        return vetService.findByIdWithSpecialtyIds(id);
     }
 
     @PostMapping({"", "/"})
