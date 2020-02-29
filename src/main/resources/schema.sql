@@ -54,3 +54,17 @@ CREATE TABLE IF NOT EXISTS visits (
     FOREIGN KEY (pet_id) REFERENCES pets(id)
 );
 
+--Begin Truncate all the data
+SET FOREIGN_KEY_CHECKS=0;
+
+TRUNCATE TABLE vets;
+TRUNCATE TABLE specialties;
+TRUNCATE TABLE vet_specialties;
+TRUNCATE TABLE types;
+TRUNCATE TABLE owners;
+TRUNCATE TABLE pets;
+TRUNCATE TABLE visits;
+
+SET FOREIGN_KEY_CHECKS=1;
+--End Truncate all the data
+

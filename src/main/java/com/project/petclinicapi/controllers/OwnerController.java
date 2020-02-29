@@ -2,8 +2,10 @@ package com.project.petclinicapi.controllers;
 
 import com.project.petclinicapi.model.Owner;
 import com.project.petclinicapi.services.OwnerService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
 @RequestMapping("/owners")
 public class OwnerController {
@@ -20,17 +22,21 @@ public class OwnerController {
         owner.setId(1);
         owner.setFirstName("Luke");
         owner.setLastName("Lee");
+
+        log.info("owner: {}", owner);
         return owner;
     }
 
     @GetMapping("/{id}")
     public Owner findById(@PathVariable Integer id) {
-            return ownerService.findById(id);
+        log.info("id: {}", id);
+        return ownerService.findById(id);
     }
 
     @PostMapping("/")
     public Owner addOwner(@RequestBody Owner owner) {
         // TODO: validate values using initbind ??
+        log.info("owner: {}", owner);
         ownerService.save(owner);
         return owner;
     }

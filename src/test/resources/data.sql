@@ -1,0 +1,10 @@
+# INSERT INTO `vets` (`id`, `first_name`, `last_name`) VALUES (1, 'Elias', 'Koelpin');
+# INSERT INTO `vets` (`id`, `first_name`, `last_name`) VALUES (2, 'Giovanna', 'Stamm');
+# INSERT INTO `vets` (`id`, `first_name`, `last_name`) VALUES (3, 'Leif', 'Schimmel');
+# INSERT INTO `vets` (`id`, `first_name`, `last_name`) VALUES (4, 'Dennis', 'Schmidt');
+# INSERT INTO `vets` (`id`, `first_name`, `last_name`) VALUES (5, 'Adolf', 'Larkin');
+# INSERT INTO `vets` (`id`, `first_name`, `last_name`) VALUES (6, 'Noah', 'Maggio');
+# INSERT INTO `vets` (`id`, `first_name`, `last_name`) VALUES (7, 'Noemi', 'Gerhold');
+# INSERT INTO `vets` (`id`, `first_name`, `last_name`) VALUES (8, 'Mariah', 'Welch');
+# INSERT INTO `vets` (`id`, `first_name`, `last_name`) VALUES (9, 'Lexi', 'Walter');
+# INSERT INTO `vets` (`first_name`, `last_name`) VALUES ('Garett', 'Denesik');
