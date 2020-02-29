@@ -1,11 +1,11 @@
 package com.project.petclinicapi.controllers;
 
+import com.project.petclinicapi.jsonformat.OwnerJson;
 import com.project.petclinicapi.model.Owner;
 import com.project.petclinicapi.services.OwnerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import java.util.Set;
 
 @Slf4j
 @RestController
@@ -19,14 +19,15 @@ public class OwnerController {
     }
 
     @GetMapping({"", "/"})
-    public List<Owner> findAll() {
-        return ownerService.findAll();
+    public Set<OwnerJson> findAll() {
+        log.info("List<OwnerJson>: {}", ownerService.findAllWithPetId());
+        return ownerService.findAllWithPetId();
     }
 
     @GetMapping("/{id}")
-    public Owner findById(@PathVariable Integer id) {
+    public OwnerJson findById(@PathVariable Integer id) {
         log.info("id: {}", id);
-        return ownerService.findById(id);
+        return ownerService.findByIdWithPetId(id);
     }
 
     @PostMapping({"", "/"})
