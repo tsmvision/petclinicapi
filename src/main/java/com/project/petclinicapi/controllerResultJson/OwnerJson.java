@@ -13,10 +13,10 @@ public class OwnerJson extends PersonJson {
     private String address;
     private String city;
     private String telephone;
-    private Set<Integer> pets = new HashSet<>();
+    private Set<OwnerJsonPet> pets = new HashSet<>();
 
-    public void addPet(Integer id) {
-        pets.add(id);
+    public void addPet(OwnerJsonPet ownerJsonPet) {
+        pets.add(ownerJsonPet);
     }
 
 }

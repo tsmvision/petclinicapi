@@ -8,9 +8,10 @@ import java.util.Set;
 
 public interface OwnerService {
     Owner findById(Integer id);
+    Set<OwnerJson> findByLastNameWithPet(String lastName);
     OwnerJson findByIdWithPetId(Integer id);
     List<Owner> findAll();
-    Set<OwnerJson> findAllWithPetId();
+    Set<OwnerJson> findAllWithPet();
     void save(Owner owner);
-    OwnerJson convertOwnerIntoOwnerJson(Owner owner);
+    OwnerJson convertOwnerToOwnerJson(Owner owner);
 }

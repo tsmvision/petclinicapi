@@ -1,6 +1,7 @@
 package com.project.petclinicapi.services;
 
 import com.project.petclinicapi.controllerResultJson.OwnerJson;
+import com.project.petclinicapi.controllerResultJson.OwnerJsonPet;
 import com.project.petclinicapi.model.Owner;
 import com.project.petclinicapi.model.Pet;
 import com.project.petclinicapi.repositories.OwnerRepository;
@@ -31,12 +32,12 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public Set<OwnerJson> findAllWithPetId() {
+    public Set<OwnerJson> findAllWithPet() {
         Iterable<Owner> owners = ownerRepository.findAll();
         Set<OwnerJson> result = new HashSet<>();
 
         for (Owner owner : owners) {
-            result.add(convertOwnerIntoOwnerJson(owner));
+            result.add(convertOwnerToOwnerJson(owner));
         }
 
         return result;
@@ -51,11 +52,22 @@ public class OwnerServiceImpl implements OwnerService {
     @Override
     public OwnerJson findByIdWithPetId(Integer id) {
         Owner owner = findById(id);
-        return convertOwnerIntoOwnerJson(owner);
+        return convertOwnerToOwnerJson(owner);
     }
 
     @Override
-    public OwnerJson convertOwnerIntoOwnerJson(Owner owner) {
+    public Set<OwnerJson> findByLastNameWithPet(String lastName) {
+        log.info("lastName: {}", lastName);
+        Set<OwnerJson> result = new HashSet<>();
+        Iterable<Owner> owners = ownerRepository.findByLastName(lastName);
+        for (Owner owner: owners) {
+            result.add(convertOwnerToOwnerJson(owner));
+        }
+        return result;
+    }
+
+    @Override
+    public OwnerJson convertOwnerToOwnerJson(Owner owner) {
         OwnerJson ownerJson = new OwnerJson();
         if (owner != null) {
             ownerJson.setId(owner.getId());
@@ -67,11 +79,21 @@ public class OwnerServiceImpl implements OwnerService {
 
             if (owner.getPets().size() > 0) {
                 for (Pet pet : owner.getPets()) {
-                    ownerJson.addPet(pet.getId());
+                    ownerJson.addPet(convertPetToOwnerJsonPet(pet));
                 }
             }
         }
         return ownerJson;
+    }
+
+    public OwnerJsonPet convertPetToOwnerJsonPet(Pet pet) {
+        OwnerJsonPet ownerJsonPet = new OwnerJsonPet();
+        if (pet != null) {
+            ownerJsonPet.setId(pet.getId());
+            ownerJsonPet.setName(pet.getName());
+            ownerJsonPet.setBirthDate(pet.getBirthDate());
+        }
+        return ownerJsonPet;
     }
 
     @Override
