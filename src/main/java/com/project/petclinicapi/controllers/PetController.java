@@ -1,6 +1,6 @@
 package com.project.petclinicapi.controllers;
 
-import com.project.petclinicapi.controllerResultJson.PetJson;
+import com.project.petclinicapi.dto.pet.PetDto;
 import com.project.petclinicapi.model.Pet;
 import com.project.petclinicapi.services.PetService;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +18,12 @@ public class PetController {
     }
 
     @GetMapping({"", "/"})
-    public Set<PetJson> findAll() {
+    public Set<PetDto> findAll() {
         return petService.findAllWithIds();
     }
 
     @GetMapping("/{id}")
-    public PetJson findById(@PathVariable Integer id) {
+    public PetDto findById(@PathVariable Integer id) {
         return petService.findByIdWithVisitIds(id);
     }
 

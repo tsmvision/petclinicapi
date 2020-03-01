@@ -1,9 +1,9 @@
 package com.project.petclinicapi.services;
 
-import com.project.petclinicapi.controllerResultJson.PetJson;
-import com.project.petclinicapi.controllerResultJson.PetJsonOwner;
-import com.project.petclinicapi.controllerResultJson.PetJsonPetType;
-import com.project.petclinicapi.controllerResultJson.PetJsonVisit;
+import com.project.petclinicapi.dto.pet.PetDto;
+import com.project.petclinicapi.dto.pet.PetOwnerDto;
+import com.project.petclinicapi.dto.pet.PetPetTypeDto;
+import com.project.petclinicapi.dto.pet.PetVisitDto;
 import com.project.petclinicapi.model.Owner;
 import com.project.petclinicapi.model.Pet;
 import com.project.petclinicapi.model.PetType;
@@ -28,7 +28,7 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public PetJson findByIdWithVisitIds(Integer id) {
+    public PetDto findByIdWithVisitIds(Integer id) {
         Pet pet = findById(id);
         return convertPetIntoPetJson(pet);
     }
@@ -44,9 +44,9 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public Set<PetJson> findAllWithIds() {
+    public Set<PetDto> findAllWithIds() {
         Iterable<Pet> pets = petRepository.findAll();
-        Set<PetJson> result = new HashSet<>();
+        Set<PetDto> result = new HashSet<>();
 
         for (Pet pet: pets) {
             result.add(convertPetIntoPetJson(pet));
@@ -56,8 +56,8 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public PetJson convertPetIntoPetJson(Pet pet) {
-        PetJson petJson = new PetJson();
+    public PetDto convertPetIntoPetJson(Pet pet) {
+        PetDto petJson = new PetDto();
         if (pet != null) {
             petJson.setId(pet.getId());
             petJson.setName(pet.getName());
@@ -77,8 +77,8 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public PetJsonOwner convertOwnerToPetJsonOwner(Owner owner) {
-        PetJsonOwner petJsonOwner = new PetJsonOwner();
+    public PetOwnerDto convertOwnerToPetJsonOwner(Owner owner) {
+        PetOwnerDto petJsonOwner = new PetOwnerDto();
         if (owner != null) {
             petJsonOwner.setId(owner.getId());
             petJsonOwner.setFirstName(owner.getFirstName());
@@ -88,8 +88,8 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public PetJsonPetType convertPetTypeToPetJsonPetType(PetType petType) {
-        PetJsonPetType petJsonPetType = new PetJsonPetType();
+    public PetPetTypeDto convertPetTypeToPetJsonPetType(PetType petType) {
+        PetPetTypeDto petJsonPetType = new PetPetTypeDto();
         if (petType != null) {
             petJsonPetType.setId(petType.getId());
             petJsonPetType.setName(petType.getName());
@@ -98,8 +98,8 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public PetJsonVisit convertVisitToPetJsonVisit(Visit visit) {
-        PetJsonVisit petJsonVisit = new PetJsonVisit();
+    public PetVisitDto convertVisitToPetJsonVisit(Visit visit) {
+        PetVisitDto petJsonVisit = new PetVisitDto();
         if (visit != null) {
             petJsonVisit.setId(visit.getId());
             petJsonVisit.setVisitDate(visit.getVisitDate());

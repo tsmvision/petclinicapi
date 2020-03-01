@@ -1,7 +1,7 @@
 package com.project.petclinicapi.services;
 
-import com.project.petclinicapi.controllerResultJson.SpecialtyJson;
-import com.project.petclinicapi.controllerResultJson.SpecialtyJsonVet;
+import com.project.petclinicapi.dto.specialty.SpecialtyDto;
+import com.project.petclinicapi.dto.specialty.SpecialtyVetDto;
 import com.project.petclinicapi.model.Specialty;
 import com.project.petclinicapi.model.Vet;
 import com.project.petclinicapi.repositories.SpecialtyRepository;
@@ -25,7 +25,7 @@ public class SpecialtyServiceImpl implements SpecialtyService {
     }
 
     @Override
-    public SpecialtyJson findByIdWithVetIds(Integer id) {
+    public SpecialtyDto findByIdWithVetIds(Integer id) {
         Specialty specialty = findById(id);
         return convertSpecialtyIntoSpecialtyJson(specialty);
     }
@@ -43,9 +43,9 @@ public class SpecialtyServiceImpl implements SpecialtyService {
     }
 
     @Override
-    public Set<SpecialtyJson> findAllWithVetIds() {
+    public Set<SpecialtyDto> findAllWithVetIds() {
         Iterable<Specialty> specialties = specialtyRepository.findAll();
-        Set<SpecialtyJson> result = new HashSet<>();
+        Set<SpecialtyDto> result = new HashSet<>();
 
         for (Specialty specialty: specialties) {
             result.add(convertSpecialtyIntoSpecialtyJson(specialty));
@@ -60,8 +60,8 @@ public class SpecialtyServiceImpl implements SpecialtyService {
     }
 
     @Override
-    public SpecialtyJson convertSpecialtyIntoSpecialtyJson(Specialty specialty) {
-        SpecialtyJson specialtyJson = new SpecialtyJson();
+    public SpecialtyDto convertSpecialtyIntoSpecialtyJson(Specialty specialty) {
+        SpecialtyDto specialtyJson = new SpecialtyDto();
         if (specialty != null) {
             specialtyJson.setId(specialty.getId());
             specialtyJson.setName(specialty.getName());
@@ -69,7 +69,7 @@ public class SpecialtyServiceImpl implements SpecialtyService {
             Set<Vet> vets = specialty.getVets();
             if (vets.size() > 0) {
                 for (Vet vet : vets) {
-                    SpecialtyJsonVet specialtyJsonVet = new SpecialtyJsonVet();
+                    SpecialtyVetDto specialtyJsonVet = new SpecialtyVetDto();
                     specialtyJsonVet.setId(vet.getId());
                     specialtyJsonVet.setFirstName(vet.getFirstName());
                     specialtyJsonVet.setLastName(vet.getLastName());

@@ -1,6 +1,6 @@
 package com.project.petclinicapi.services;
 
-import com.project.petclinicapi.controllerResultJson.VisitJson;
+import com.project.petclinicapi.dto.visit.VisitDto;
 import com.project.petclinicapi.model.Visit;
 import com.project.petclinicapi.repositories.VisitRepository;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ public class VisitServiceImpl implements VisitService {
     }
 
     @Override
-    public VisitJson findByIdWithPetId(Integer id) {
+    public VisitDto findByIdWithPetId(Integer id) {
         return convertVetIntoVetJson(findById(id));
     }
 
@@ -38,9 +38,9 @@ public class VisitServiceImpl implements VisitService {
     }
 
     @Override
-    public Set<VisitJson> findAllWithPetIds() {
+    public Set<VisitDto> findAllWithPetIds() {
         Iterable<Visit> visits = visitRepository.findAll();
-        Set<VisitJson> result = new HashSet<>();
+        Set<VisitDto> result = new HashSet<>();
 
         for (Visit visit : visits) {
             result.add(convertVetIntoVetJson(visit));
@@ -49,8 +49,8 @@ public class VisitServiceImpl implements VisitService {
         return result;
     }
 
-    public VisitJson convertVetIntoVetJson(Visit visit) {
-        VisitJson visitJson = new VisitJson();
+    public VisitDto convertVetIntoVetJson(Visit visit) {
+        VisitDto visitJson = new VisitDto();
         if (visit != null) {
             visitJson.setId(visit.getId());
             visitJson.setVisitDate(visit.getVisitDate());

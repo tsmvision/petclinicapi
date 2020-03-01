@@ -1,7 +1,7 @@
 package com.project.petclinicapi.services;
 
-import com.project.petclinicapi.controllerResultJson.VetJson;
-import com.project.petclinicapi.controllerResultJson.VetJsonSpecialty;
+import com.project.petclinicapi.dto.vet.VetDto;
+import com.project.petclinicapi.dto.vet.VetSpecialtyDto;
 import com.project.petclinicapi.model.Specialty;
 import com.project.petclinicapi.model.Vet;
 import com.project.petclinicapi.repositories.VetRepository;
@@ -25,7 +25,7 @@ public class VetServiceImpl implements VetService {
     }
 
     @Override
-    public VetJson findByIdWithSpecialtyIds(Integer id) {
+    public VetDto findByIdWithSpecialtyIds(Integer id) {
         return convertVetIntoVetJson(findById(id));
     }
 
@@ -40,9 +40,9 @@ public class VetServiceImpl implements VetService {
     }
 
     @Override
-    public Set<VetJson> findAllWithSpecialtyIds() {
+    public Set<VetDto> findAllWithSpecialtyIds() {
         Iterable<Vet> vets = vetRepository.findAll();
-        Set<VetJson> result = new HashSet<>();
+        Set<VetDto> result = new HashSet<>();
         for (Vet vet: vets) {
             result.add(convertVetIntoVetJson(vet));
         }
@@ -55,8 +55,8 @@ public class VetServiceImpl implements VetService {
     }
 
     @Override
-    public VetJson convertVetIntoVetJson(Vet vet) {
-        VetJson vetJson = new VetJson();
+    public VetDto convertVetIntoVetJson(Vet vet) {
+        VetDto vetJson = new VetDto();
         if (vet != null) {
             vetJson.setId(vet.getId());
             vetJson.setFirstName(vet.getFirstName());
@@ -64,7 +64,7 @@ public class VetServiceImpl implements VetService {
             Set<Specialty> specialties  = vet.getSpecialties();
             if (specialties.size() > 0) {
                 for (Specialty specialty : specialties) {
-                    VetJsonSpecialty vetJsonSpecialty = new VetJsonSpecialty();
+                    VetSpecialtyDto vetJsonSpecialty = new VetSpecialtyDto();
                     vetJsonSpecialty.setId(specialty.getId());
                     vetJsonSpecialty.setName(specialty.getName());
                     vetJson.addSpecialtyId(vetJsonSpecialty);

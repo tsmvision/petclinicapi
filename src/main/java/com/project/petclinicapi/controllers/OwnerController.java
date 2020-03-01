@@ -1,6 +1,6 @@
 package com.project.petclinicapi.controllers;
 
-import com.project.petclinicapi.controllerResultJson.OwnerJson;
+import com.project.petclinicapi.dto.owner.OwnerDto;
 import com.project.petclinicapi.model.Owner;
 import com.project.petclinicapi.services.OwnerService;
 import lombok.extern.slf4j.Slf4j;
@@ -20,19 +20,19 @@ public class OwnerController {
     }
 
     @GetMapping({"", "/"})
-    public Set<OwnerJson> findAll() {
+    public Set<OwnerDto> findAll() {
         log.info("List<OwnerJson>: {}", ownerService.findAllWithPet());
         return ownerService.findAllWithPet();
     }
 
     @GetMapping("/{id}")
-    public OwnerJson findById(@PathVariable Integer id) {
+    public OwnerDto findById(@PathVariable Integer id) {
         log.info("id: {}", id);
         return ownerService.findByIdWithPetId(id);
     }
 
     @GetMapping("/lastName/{lastName}")
-    public Set<OwnerJson> findByLastNameWithPetId(@PathVariable String lastName) {
+    public Set<OwnerDto> findByLastNameWithPetId(@PathVariable String lastName) {
         log.info("lastName: {}", lastName);
         return ownerService.findByLastNameWithPet(lastName);
     }
@@ -40,8 +40,9 @@ public class OwnerController {
     @PostMapping({"", "/"})
     public Owner addOwner(@RequestBody Owner owner) {
         // TODO: validate values using initbind ??
-        log.info("owner: {}", owner);
+        log.info("owner: {}", owner.getFirstName());
         ownerService.save(owner);
         return owner;
     }
+
 }

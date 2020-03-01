@@ -1,11 +1,11 @@
-package com.project.petclinicapi.controllerResultJson;
+package com.project.petclinicapi.dto.common;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class NamedJson extends BaseJson {
+public class NamedDto extends BaseDto {
 
     private String name;
     public String toString() {
